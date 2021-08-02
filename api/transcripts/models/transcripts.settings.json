@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transcripts",
+  "info": {
+    "name": "Transcript",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "file": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "student": {
+      "model": "students",
+      "via": "transcripts"
+    }
+  }
+}

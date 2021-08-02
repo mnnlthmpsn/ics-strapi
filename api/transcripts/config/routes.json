@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/transcripts",
+      "handler": "transcripts.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/transcripts/count",
+      "handler": "transcripts.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/transcripts/:id",
+      "handler": "transcripts.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/transcripts",
+      "handler": "transcripts.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/transcripts/:id",
+      "handler": "transcripts.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/transcripts/:id",
+      "handler": "transcripts.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

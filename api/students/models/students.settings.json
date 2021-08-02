@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "name": "Student",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "teachers": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "students",
+      "dominant": true
+    },
+    "parents": {
+      "via": "students",
+      "plugin": "users-permissions",
+      "collection": "user",
+      "dominant": true
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "transcripts": {
+      "via": "student",
+      "collection": "transcripts"
+    }
+  }
+}
