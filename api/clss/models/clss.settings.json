@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clsses",
+  "info": {
+    "name": "Clss",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "students": {
+      "via": "clss",
+      "collection": "students"
+    },
+    "teacher": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "title": {
+      "type": "string"
+    },
+    "assignments": {
+      "via": "class",
+      "collection": "assignment"
+    }
+  }
+}

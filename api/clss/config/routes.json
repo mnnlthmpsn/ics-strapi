@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/clsses",
+      "handler": "clss.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/clsses/count",
+      "handler": "clss.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/clsses/:id",
+      "handler": "clss.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/clsses",
+      "handler": "clss.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/clsses/:id",
+      "handler": "clss.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/clsses/:id",
+      "handler": "clss.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

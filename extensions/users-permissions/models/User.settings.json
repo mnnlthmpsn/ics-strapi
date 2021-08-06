@@ -70,8 +70,12 @@
     "phone": {
       "type": "string"
     },
+    "is_teacher": {
+      "type": "boolean",
+      "default": false
+    },
     "students": {
-      "via": "parents",
+      "via": "teacher",
       "collection": "students"
     }
   }

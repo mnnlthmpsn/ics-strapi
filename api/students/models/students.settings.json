@@ -12,11 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "teachers": {
+    "teacher": {
       "plugin": "users-permissions",
-      "collection": "user",
-      "via": "students",
-      "dominant": true
+      "model": "user",
+      "via": "students"
     },
     "parents": {
       "via": "students",
@@ -39,6 +38,10 @@
     "transcripts": {
       "via": "student",
       "collection": "transcripts"
+    },
+    "clss": {
+      "via": "students",
+      "model": "clss"
     }
   }
 }

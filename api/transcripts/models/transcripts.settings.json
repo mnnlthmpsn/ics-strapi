@@ -20,8 +20,8 @@
       "pluginOptions": {}
     },
     "student": {
-      "model": "students",
-      "via": "transcripts"
+      "via": "transcripts",
+      "model": "students"
     }
   }
 }

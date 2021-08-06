@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assignments",
+  "info": {
+    "name": "Assignment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "class": {
+      "model": "clss",
+      "via": "assignments"
+    },
+    "assignment": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "solution": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
