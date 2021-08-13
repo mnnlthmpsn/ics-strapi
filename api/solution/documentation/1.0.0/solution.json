@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/clsses": {
+    "/solutions": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Clss"
+                    "$ref": "#/components/schemas/Solution"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Clss"
+          "Solution"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Clss"
+                  "$ref": "#/components/schemas/Solution"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Clss"
+          "Solution"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewClss"
+                "$ref": "#/components/schemas/NewSolution"
               }
             }
           }
         }
       }
     },
-    "/clsses/count": {
+    "/solutions/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Clss"
+          "Solution"
         ],
         "parameters": []
       }
     },
-    "/clsses/{id}": {
+    "/solutions/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Clss"
+                  "$ref": "#/components/schemas/Solution"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Clss"
+          "Solution"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Clss"
+                  "$ref": "#/components/schemas/Solution"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Clss"
+          "Solution"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewClss"
+                "$ref": "#/components/schemas/NewSolution"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Clss"
+          "Solution"
         ],
         "parameters": [
           {
@@ -514,122 +514,44 @@
   },
   "components": {
     "schemas": {
-      "Clss": {
+      "Solution": {
         "required": [
-          "id"
+          "id",
+          "file"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "students": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "teacher": {
-                  "type": "string"
-                },
-                "parents": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "firstname": {
-                  "type": "string"
-                },
-                "lastname": {
-                  "type": "string"
-                },
-                "age": {
-                  "type": "integer"
-                },
-                "gender": {
-                  "type": "string"
-                },
-                "transcripts": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "clss": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "teacher": {
+          "assignment": {
             "required": [
               "id",
-              "username",
-              "email",
-              "firstname",
-              "lastname"
+              "overdue"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "username": {
+              "class": {
                 "type": "string"
               },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "phone": {
-                "type": "string"
-              },
-              "is_teacher": {
-                "type": "boolean"
-              },
-              "students": {
+              "assignment": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
+              },
+              "overdue": {
+                "type": "boolean"
+              },
+              "solutions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -639,39 +561,65 @@
               }
             }
           },
-          "title": {
-            "type": "string"
-          },
-          "assignments": {
+          "file": {
             "type": "array",
             "items": {
               "required": [
                 "id",
-                "overdue"
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "class": {
+                "name": {
                   "type": "string"
                 },
-                "assignment": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                "alternativeText": {
+                  "type": "string"
                 },
-                "overdue": {
-                  "type": "boolean"
+                "caption": {
+                  "type": "string"
                 },
-                "solutions": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                "width": {
+                  "type": "integer"
                 },
-                "published_at": {
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
                   "type": "string"
                 },
                 "created_by": {
@@ -689,25 +637,10 @@
           }
         }
       },
-      "NewClss": {
+      "NewSolution": {
         "properties": {
-          "students": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "teacher": {
+          "assignment": {
             "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "assignments": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",
@@ -725,7 +658,7 @@
   },
   "tags": [
     {
-      "name": "Clss"
+      "name": "Solution"
     }
   ]
 }

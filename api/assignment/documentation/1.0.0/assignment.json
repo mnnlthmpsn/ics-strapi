@@ -516,7 +516,8 @@
     "schemas": {
       "Assignment": {
         "required": [
-          "id"
+          "id",
+          "overdue"
         ],
         "properties": {
           "id": {
@@ -629,65 +630,31 @@
               }
             }
           },
-          "solution": {
+          "overdue": {
+            "type": "boolean",
+            "default": false
+          },
+          "solutions": {
             "type": "array",
             "items": {
               "required": [
                 "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
+                "file"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "name": {
+                "assignment": {
                   "type": "string"
                 },
-                "alternativeText": {
-                  "type": "string"
+                "file": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
+                "published_at": {
                   "type": "string"
                 },
                 "created_by": {
@@ -706,9 +673,22 @@
         }
       },
       "NewAssignment": {
+        "required": [
+          "overdue"
+        ],
         "properties": {
           "class": {
             "type": "string"
+          },
+          "overdue": {
+            "type": "boolean",
+            "default": false
+          },
+          "solutions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
