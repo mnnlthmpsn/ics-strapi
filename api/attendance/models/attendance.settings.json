@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendances",
+  "info": {
+    "name": "Attendance"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "students": {
+      "collection": "students"
+    },
+    "date": {
+      "type": "date"
+    },
+    "clss": {
+      "model": "clss"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}
