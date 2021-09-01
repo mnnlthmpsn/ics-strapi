@@ -1262,9 +1262,13 @@
           "phone": {
             "type": "string"
           },
-          "is_teacher": {
-            "type": "boolean",
-            "default": false
+          "user_role": {
+            "type": "string",
+            "enum": [
+              "parent",
+              "teacher",
+              "student"
+            ]
           },
           "students": {
             "type": "array",
@@ -1276,8 +1280,11 @@
                 "id": {
                   "type": "string"
                 },
-                "teacher": {
-                  "type": "string"
+                "teachers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "parents": {
                   "type": "array",
@@ -1304,6 +1311,9 @@
                   }
                 },
                 "clss": {
+                  "type": "string"
+                },
+                "profile": {
                   "type": "string"
                 },
                 "published_at": {
@@ -1370,9 +1380,13 @@
           "phone": {
             "type": "string"
           },
-          "is_teacher": {
-            "type": "boolean",
-            "default": false
+          "user_role": {
+            "type": "string",
+            "enum": [
+              "parent",
+              "teacher",
+              "student"
+            ]
           },
           "students": {
             "type": "array",

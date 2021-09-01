@@ -581,8 +581,13 @@
                     "type": "string"
                   }
                 },
-                "is_teacher": {
-                  "type": "boolean"
+                "user_role": {
+                  "type": "string",
+                  "enum": [
+                    "parent",
+                    "teacher",
+                    "student"
+                  ]
                 },
                 "created_by": {
                   "type": "string"

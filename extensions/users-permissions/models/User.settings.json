@@ -70,12 +70,16 @@
     "phone": {
       "type": "string"
     },
-    "is_teacher": {
-      "type": "boolean",
-      "default": false
+    "user_role": {
+      "type": "enumeration",
+      "enum": [
+        "parent",
+        "teacher",
+        "student"
+      ]
     },
     "students": {
-      "via": "teacher",
+      "via": "parents",
       "collection": "students"
     }
   }

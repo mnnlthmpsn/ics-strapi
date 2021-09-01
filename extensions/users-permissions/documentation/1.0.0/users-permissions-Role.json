@@ -572,8 +572,13 @@
                 "phone": {
                   "type": "string"
                 },
-                "is_teacher": {
-                  "type": "boolean"
+                "user_role": {
+                  "type": "string",
+                  "enum": [
+                    "parent",
+                    "teacher",
+                    "student"
+                  ]
                 },
                 "students": {
                   "type": "array",

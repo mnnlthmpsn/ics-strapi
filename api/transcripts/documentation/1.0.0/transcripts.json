@@ -597,8 +597,11 @@
               "id": {
                 "type": "string"
               },
-              "teacher": {
-                "type": "string"
+              "teachers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "parents": {
                 "type": "array",
@@ -625,6 +628,9 @@
                 }
               },
               "clss": {
+                "type": "string"
+              },
+              "profile": {
                 "type": "string"
               },
               "published_at": {

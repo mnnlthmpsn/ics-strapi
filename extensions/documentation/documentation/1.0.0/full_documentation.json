@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "08/30/2021 6:51:27 PM"
+    "x-generation-date": "09/01/2021 2:33:55 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6608,8 +6608,11 @@
                 "id": {
                   "type": "string"
                 },
-                "teacher": {
-                  "type": "string"
+                "teachers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "parents": {
                   "type": "array",
@@ -6636,6 +6639,9 @@
                   }
                 },
                 "clss": {
+                  "type": "string"
+                },
+                "profile": {
                   "type": "string"
                 },
                 "published_at": {
@@ -6748,8 +6754,11 @@
                 "id": {
                   "type": "string"
                 },
-                "teacher": {
-                  "type": "string"
+                "teachers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "parents": {
                   "type": "array",
@@ -6776,6 +6785,9 @@
                   }
                 },
                 "clss": {
+                  "type": "string"
+                },
+                "profile": {
                   "type": "string"
                 },
                 "published_at": {
@@ -6838,8 +6850,13 @@
               "phone": {
                 "type": "string"
               },
-              "is_teacher": {
-                "type": "boolean"
+              "user_role": {
+                "type": "string",
+                "enum": [
+                  "parent",
+                  "teacher",
+                  "student"
+                ]
               },
               "students": {
                 "type": "array",
@@ -7004,8 +7021,13 @@
                     "type": "string"
                   }
                 },
-                "is_teacher": {
-                  "type": "boolean"
+                "user_role": {
+                  "type": "string",
+                  "enum": [
+                    "parent",
+                    "teacher",
+                    "student"
+                  ]
                 },
                 "created_by": {
                   "type": "string"
@@ -7193,68 +7215,76 @@
           "id": {
             "type": "string"
           },
-          "teacher": {
-            "required": [
-              "id",
-              "username",
-              "email",
-              "firstname",
-              "lastname"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "phone": {
-                "type": "string"
-              },
-              "is_teacher": {
-                "type": "boolean"
-              },
-              "students": {
-                "type": "array",
-                "items": {
+          "teachers": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "username",
+                "email",
+                "firstname",
+                "lastname"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "resetPasswordToken": {
+                  "type": "string"
+                },
+                "confirmationToken": {
+                  "type": "string"
+                },
+                "confirmed": {
+                  "type": "boolean"
+                },
+                "blocked": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "firstname": {
+                  "type": "string"
+                },
+                "lastname": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "user_role": {
+                  "type": "string",
+                  "enum": [
+                    "parent",
+                    "teacher",
+                    "student"
+                  ]
+                },
+                "students": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
@@ -7308,8 +7338,13 @@
                 "phone": {
                   "type": "string"
                 },
-                "is_teacher": {
-                  "type": "boolean"
+                "user_role": {
+                  "type": "string",
+                  "enum": [
+                    "parent",
+                    "teacher",
+                    "student"
+                  ]
                 },
                 "students": {
                   "type": "array",
@@ -7403,6 +7438,76 @@
               }
             }
           },
+          "profile": {
+            "required": [
+              "id",
+              "username",
+              "email",
+              "firstname",
+              "lastname"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "firstname": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "user_role": {
+                "type": "string",
+                "enum": [
+                  "parent",
+                  "teacher",
+                  "student"
+                ]
+              },
+              "students": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7411,8 +7516,11 @@
       },
       "NewStudents": {
         "properties": {
-          "teacher": {
-            "type": "string"
+          "teachers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "parents": {
             "type": "array",
@@ -7439,6 +7547,9 @@
             }
           },
           "clss": {
+            "type": "string"
+          },
+          "profile": {
             "type": "string"
           },
           "published_at": {
@@ -7536,8 +7647,11 @@
               "id": {
                 "type": "string"
               },
-              "teacher": {
-                "type": "string"
+              "teachers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "parents": {
                 "type": "array",
@@ -7564,6 +7678,9 @@
                 }
               },
               "clss": {
+                "type": "string"
+              },
+              "profile": {
                 "type": "string"
               },
               "published_at": {
@@ -7710,8 +7827,13 @@
                 "phone": {
                   "type": "string"
                 },
-                "is_teacher": {
-                  "type": "boolean"
+                "user_role": {
+                  "type": "string",
+                  "enum": [
+                    "parent",
+                    "teacher",
+                    "student"
+                  ]
                 },
                 "students": {
                   "type": "array",
@@ -7843,9 +7965,13 @@
           "phone": {
             "type": "string"
           },
-          "is_teacher": {
-            "type": "boolean",
-            "default": false
+          "user_role": {
+            "type": "string",
+            "enum": [
+              "parent",
+              "teacher",
+              "student"
+            ]
           },
           "students": {
             "type": "array",
@@ -7857,8 +7983,11 @@
                 "id": {
                   "type": "string"
                 },
-                "teacher": {
-                  "type": "string"
+                "teachers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "parents": {
                   "type": "array",
@@ -7885,6 +8014,9 @@
                   }
                 },
                 "clss": {
+                  "type": "string"
+                },
+                "profile": {
                   "type": "string"
                 },
                 "published_at": {
@@ -7951,9 +8083,13 @@
           "phone": {
             "type": "string"
           },
-          "is_teacher": {
-            "type": "boolean",
-            "default": false
+          "user_role": {
+            "type": "string",
+            "enum": [
+              "parent",
+              "teacher",
+              "student"
+            ]
           },
           "students": {
             "type": "array",
