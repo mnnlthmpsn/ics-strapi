@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/04/2021 12:22:22 AM"
+    "x-generation-date": "09/13/2021 10:36:01 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7398,6 +7398,43 @@
           "description": {
             "type": "string"
           },
+          "clss": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "students": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "teacher": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "assignments": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7410,6 +7447,9 @@
             "type": "string"
           },
           "description": {
+            "type": "string"
+          },
+          "clss": {
             "type": "string"
           },
           "published_at": {
@@ -7875,6 +7915,7 @@
               "user_role": {
                 "type": "string",
                 "enum": [
+                  "admin",
                   "parent",
                   "teacher",
                   "student"
@@ -8035,6 +8076,7 @@
               "user_role": {
                 "type": "string",
                 "enum": [
+                  "admin",
                   "parent",
                   "teacher",
                   "student"
@@ -8158,19 +8200,20 @@
                 "phone": {
                   "type": "string"
                 },
+                "user_role": {
+                  "type": "string",
+                  "enum": [
+                    "admin",
+                    "parent",
+                    "teacher",
+                    "student"
+                  ]
+                },
                 "students": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
-                },
-                "user_role": {
-                  "type": "string",
-                  "enum": [
-                    "parent",
-                    "teacher",
-                    "student"
-                  ]
                 },
                 "created_by": {
                   "type": "string"
@@ -8568,6 +8611,7 @@
                 "user_role": {
                   "type": "string",
                   "enum": [
+                    "admin",
                     "parent",
                     "teacher",
                     "student"
@@ -8641,6 +8685,7 @@
                 "user_role": {
                   "type": "string",
                   "enum": [
+                    "admin",
                     "parent",
                     "teacher",
                     "student"
@@ -8789,6 +8834,7 @@
               "user_role": {
                 "type": "string",
                 "enum": [
+                  "admin",
                   "parent",
                   "teacher",
                   "student"
@@ -9130,6 +9176,7 @@
                 "user_role": {
                   "type": "string",
                   "enum": [
+                    "admin",
                     "parent",
                     "teacher",
                     "student"
@@ -9268,6 +9315,7 @@
           "user_role": {
             "type": "string",
             "enum": [
+              "admin",
               "parent",
               "teacher",
               "student"
@@ -9386,6 +9434,7 @@
           "user_role": {
             "type": "string",
             "enum": [
+              "admin",
               "parent",
               "teacher",
               "student"

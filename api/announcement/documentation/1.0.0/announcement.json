@@ -528,6 +528,43 @@
           "description": {
             "type": "string"
           },
+          "clss": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "students": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "teacher": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "assignments": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -540,6 +577,9 @@
             "type": "string"
           },
           "description": {
+            "type": "string"
+          },
+          "clss": {
             "type": "string"
           },
           "published_at": {

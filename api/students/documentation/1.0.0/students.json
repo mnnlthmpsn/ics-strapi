@@ -575,6 +575,7 @@
                 "user_role": {
                   "type": "string",
                   "enum": [
+                    "admin",
                     "parent",
                     "teacher",
                     "student"
@@ -648,6 +649,7 @@
                 "user_role": {
                   "type": "string",
                   "enum": [
+                    "admin",
                     "parent",
                     "teacher",
                     "student"
@@ -796,6 +798,7 @@
               "user_role": {
                 "type": "string",
                 "enum": [
+                  "admin",
                   "parent",
                   "teacher",
                   "student"

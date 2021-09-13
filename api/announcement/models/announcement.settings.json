@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "announcements",
   "info": {
-    "name": "Announcement"
+    "name": "Announcement",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -16,6 +17,9 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "clss": {
+      "model": "clss"
     }
   }
 }

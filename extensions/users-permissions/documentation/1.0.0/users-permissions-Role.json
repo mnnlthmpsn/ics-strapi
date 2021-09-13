@@ -575,6 +575,7 @@
                 "user_role": {
                   "type": "string",
                   "enum": [
+                    "admin",
                     "parent",
                     "teacher",
                     "student"

@@ -575,19 +575,20 @@
                 "phone": {
                   "type": "string"
                 },
+                "user_role": {
+                  "type": "string",
+                  "enum": [
+                    "admin",
+                    "parent",
+                    "teacher",
+                    "student"
+                  ]
+                },
                 "students": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
-                },
-                "user_role": {
-                  "type": "string",
-                  "enum": [
-                    "parent",
-                    "teacher",
-                    "student"
-                  ]
                 },
                 "created_by": {
                   "type": "string"
