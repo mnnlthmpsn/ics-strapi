@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/reports": {
+    "/foods": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Report"
+                    "$ref": "#/components/schemas/Food"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Report"
+          "Food"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Report"
+                  "$ref": "#/components/schemas/Food"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Report"
+          "Food"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewReport"
+                "$ref": "#/components/schemas/NewFood"
               }
             }
           }
         }
       }
     },
-    "/reports/count": {
+    "/foods/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Report"
+          "Food"
         ],
         "parameters": []
       }
     },
-    "/reports/{id}": {
+    "/foods/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Report"
+                  "$ref": "#/components/schemas/Food"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Report"
+          "Food"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Report"
+                  "$ref": "#/components/schemas/Food"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Report"
+          "Food"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewReport"
+                "$ref": "#/components/schemas/NewFood"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Report"
+          "Food"
         ],
         "parameters": [
           {
@@ -514,142 +514,22 @@
   },
   "components": {
     "schemas": {
-      "Report": {
+      "Food": {
         "required": [
           "id",
-          "file"
+          "title",
+          "in_stock"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "student": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "teachers": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "parents": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "age": {
-                "type": "integer"
-              },
-              "gender": {
-                "type": "string"
-              },
-              "transcripts": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "clss": {
-                "type": "string"
-              },
-              "profile": {
-                "type": "string"
-              },
-              "extra_curricular_activities": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "title": {
+            "type": "string"
           },
-          "file": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "in_stock": {
+            "type": "boolean",
+            "default": true
           },
           "published_at": {
             "type": "string",
@@ -657,10 +537,18 @@
           }
         }
       },
-      "NewReport": {
+      "NewFood": {
+        "required": [
+          "title",
+          "in_stock"
+        ],
         "properties": {
-          "student": {
+          "title": {
             "type": "string"
+          },
+          "in_stock": {
+            "type": "boolean",
+            "default": true
           },
           "published_at": {
             "type": "string",
@@ -678,7 +566,7 @@
   },
   "tags": [
     {
-      "name": "Report"
+      "name": "Food"
     }
   ]
 }

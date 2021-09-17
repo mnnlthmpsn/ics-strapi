@@ -47,6 +47,9 @@
     "profile": {
       "plugin": "users-permissions",
       "model": "user"
+    },
+    "extra_curricular_activities": {
+      "type": "richtext"
     }
   }
 }

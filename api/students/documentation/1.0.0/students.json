@@ -818,6 +818,9 @@
               }
             }
           },
+          "extra_curricular_activities": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -860,6 +863,9 @@
             "type": "string"
           },
           "profile": {
+            "type": "string"
+          },
+          "extra_curricular_activities": {
             "type": "string"
           },
           "published_at": {

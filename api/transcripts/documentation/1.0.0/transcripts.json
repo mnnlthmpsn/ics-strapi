@@ -633,6 +633,9 @@
               "profile": {
                 "type": "string"
               },
+              "extra_curricular_activities": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },
