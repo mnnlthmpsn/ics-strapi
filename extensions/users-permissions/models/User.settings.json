@@ -80,7 +80,7 @@
       ]
     },
     "students": {
-      "via": "parents",
+      "via": "teacher",
       "collection": "students"
     }
   }

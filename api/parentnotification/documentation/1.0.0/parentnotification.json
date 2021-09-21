@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/clsses": {
+    "/parentnotifications": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Clss"
+                    "$ref": "#/components/schemas/Parentnotification"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Clss"
+          "Parentnotification"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Clss"
+                  "$ref": "#/components/schemas/Parentnotification"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Clss"
+          "Parentnotification"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewClss"
+                "$ref": "#/components/schemas/NewParentnotification"
               }
             }
           }
         }
       }
     },
-    "/clsses/count": {
+    "/parentnotifications/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Clss"
+          "Parentnotification"
         ],
         "parameters": []
       }
     },
-    "/clsses/{id}": {
+    "/parentnotifications/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Clss"
+                  "$ref": "#/components/schemas/Parentnotification"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Clss"
+          "Parentnotification"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Clss"
+                  "$ref": "#/components/schemas/Parentnotification"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Clss"
+          "Parentnotification"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewClss"
+                "$ref": "#/components/schemas/NewParentnotification"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Clss"
+          "Parentnotification"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Clss": {
+      "Parentnotification": {
         "required": [
           "id"
         ],
@@ -522,24 +522,46 @@
           "id": {
             "type": "string"
           },
-          "students": {
+          "parents": {
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "username",
+                "email",
+                "firstname",
+                "lastname"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "teacher": {
+                "username": {
                   "type": "string"
                 },
-                "parents": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                "email": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "resetPasswordToken": {
+                  "type": "string"
+                },
+                "confirmationToken": {
+                  "type": "string"
+                },
+                "confirmed": {
+                  "type": "boolean"
+                },
+                "blocked": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "type": "string"
                 },
                 "firstname": {
                   "type": "string"
@@ -547,29 +569,23 @@
                 "lastname": {
                   "type": "string"
                 },
-                "age": {
-                  "type": "integer"
-                },
-                "gender": {
+                "phone": {
                   "type": "string"
                 },
-                "transcripts": {
+                "user_role": {
+                  "type": "string",
+                  "enum": [
+                    "admin",
+                    "parent",
+                    "teacher",
+                    "student"
+                  ]
+                },
+                "students": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
-                },
-                "clss": {
-                  "type": "string"
-                },
-                "profile": {
-                  "type": "string"
-                },
-                "extra_curricular_activities": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -577,123 +593,14 @@
                 "updated_by": {
                   "type": "string"
                 }
-              }
-            }
-          },
-          "teacher": {
-            "required": [
-              "id",
-              "username",
-              "email",
-              "firstname",
-              "lastname"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "phone": {
-                "type": "string"
-              },
-              "user_role": {
-                "type": "string",
-                "enum": [
-                  "admin",
-                  "parent",
-                  "teacher",
-                  "student"
-                ]
-              },
-              "students": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
           "title": {
             "type": "string"
           },
-          "assignments": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "overdue"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "class": {
-                  "type": "string"
-                },
-                "assignment": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "overdue": {
-                  "type": "boolean"
-                },
-                "solutions": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "message": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -701,25 +608,19 @@
           }
         }
       },
-      "NewClss": {
+      "NewParentnotification": {
         "properties": {
-          "students": {
+          "parents": {
             "type": "array",
             "items": {
               "type": "string"
             }
-          },
-          "teacher": {
-            "type": "string"
           },
           "title": {
             "type": "string"
           },
-          "assignments": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "message": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -737,7 +638,7 @@
   },
   "tags": [
     {
-      "name": "Clss"
+      "name": "Parentnotification"
     }
   ]
 }

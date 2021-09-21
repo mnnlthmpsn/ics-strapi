@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/parentnotifications",
+      "handler": "parentnotification.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/parentnotifications/count",
+      "handler": "parentnotification.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/parentnotifications/:id",
+      "handler": "parentnotification.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/parentnotifications",
+      "handler": "parentnotification.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/parentnotifications/:id",
+      "handler": "parentnotification.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/parentnotifications/:id",
+      "handler": "parentnotification.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

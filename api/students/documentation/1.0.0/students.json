@@ -522,77 +522,74 @@
           "id": {
             "type": "string"
           },
-          "teachers": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "username",
-                "email",
-                "firstname",
-                "lastname"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "resetPasswordToken": {
-                  "type": "string"
-                },
-                "confirmationToken": {
-                  "type": "string"
-                },
-                "confirmed": {
-                  "type": "boolean"
-                },
-                "blocked": {
-                  "type": "boolean"
-                },
-                "role": {
-                  "type": "string"
-                },
-                "firstname": {
-                  "type": "string"
-                },
-                "lastname": {
-                  "type": "string"
-                },
-                "phone": {
-                  "type": "string"
-                },
-                "user_role": {
-                  "type": "string",
-                  "enum": [
-                    "admin",
-                    "parent",
-                    "teacher",
-                    "student"
-                  ]
-                },
-                "students": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "teacher": {
+            "required": [
+              "id",
+              "username",
+              "email",
+              "firstname",
+              "lastname"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "firstname": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "user_role": {
+                "type": "string",
+                "enum": [
+                  "admin",
+                  "parent",
+                  "teacher",
+                  "student"
+                ]
+              },
+              "students": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
@@ -829,11 +826,8 @@
       },
       "NewStudents": {
         "properties": {
-          "teachers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "teacher": {
+            "type": "string"
           },
           "parents": {
             "type": "array",

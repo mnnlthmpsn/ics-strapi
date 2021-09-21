@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "parentnotifications",
+  "info": {
+    "name": "Parentnotification",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "parents": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "richtext"
+    }
+  }
+}

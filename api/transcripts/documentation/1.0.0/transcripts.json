@@ -597,11 +597,8 @@
               "id": {
                 "type": "string"
               },
-              "teachers": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "teacher": {
+                "type": "string"
               },
               "parents": {
                 "type": "array",
